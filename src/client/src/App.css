@@ -85,5 +85,83 @@ body {
 form{ 
   flex-direction: column;
   display:flex;
-  
+  justify-content: center;
+  padding: 1rem;
+} 
+form > .className { 
+  display:flex;
+  justify-content: center;
+
+}
+form > .capGrow { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .startbiz { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .finny { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .livE { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .info { 
+  display:flex;
+  justify-content: center;
+}
+form > .inc { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .expe { 
+  color:black;
+  margin-left: 40rem;
+} 
+form > .fib { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .child { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .bannk { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .bannky { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .bannkn { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .stonkk { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .stonkky { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .stonkkn { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .finAS { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .finASy { 
+  color:black;
+  margin-left: 40rem;
+}
+form > .finASn { 
+  color:black;
+  margin-left: 40rem;
 }
