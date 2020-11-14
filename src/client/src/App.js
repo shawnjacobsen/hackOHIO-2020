@@ -4,7 +4,7 @@ import Axios from 'axios';
 import "./App.css";
 import Navbar from "./NavBar/Navbar";
 import Login from "./Login";
-import Register from "./Register";
+import Goals from "./Goals";
 import Dashboard from "./Dashboard";
 import MatchingCard from "./MatchingCard";
 import Resource from "./Resource";
@@ -61,7 +61,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/resources" component={Resource} />
-            <Route path="/register" component={Register} />
+            <Route path="/goals" component={Goals} />
           </Switch>
         </div>
       </Router> 
