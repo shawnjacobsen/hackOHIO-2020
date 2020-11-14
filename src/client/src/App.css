@@ -121,18 +121,66 @@ form > .inc {
   color:black;
   margin-left: 345px;
 
+
+font-family: montserrat;
+
+
+}
+.inc > .inc2 { 
+  width: 125px;
+  height:8px;
+box-sizing: border-box;
+font-family: montserrat;
+color: #2C3E50;
+font-size: 13px;
+padding: 15px;
+border: 1px solid rgb(185, 170, 170);
+
 }
 form > .expe { 
   color:black;
   margin-left: 345px;
 } 
+.expe > .expe2 { 
+  width: 125px;
+  height:8px;
+box-sizing: border-box;
+font-family: montserrat;
+color: #2C3E50;
+font-size: 13px;
+padding: 15px;
+border: 1px solid rgb(185, 170, 170);
+
+}
 form > .fib { 
   color:black;
   margin-left: 345px;
 }
+.fib > .fib2 { 
+  width: 125px;
+  height:8px;
+box-sizing: border-box;
+font-family: montserrat;
+color: #2C3E50;
+font-size: 13px;
+padding: 15px;
+border: 1px solid rgb(185, 170, 170);
+
+}
 form > .child { 
   color:black;
   margin-left: 345px;
+}
+.child > .child2 { 
+  width: 75px;
+  height:8px;
+box-sizing: border-box;
+font-family: montserrat;
+color: #2C3E50;
+font-size: 13px;
+padding: 15px;
+border: 1px solid rgb(185, 170, 170);
+
 }
 form > .bannk { 
   color:black;
@@ -175,7 +223,7 @@ form > .finASn {
   width: 100px;
   background: #27AE60;
   font-weight: bold;
-  color: white;
+  color: rgb(255, 255, 255);
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
