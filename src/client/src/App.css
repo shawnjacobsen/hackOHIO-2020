@@ -1,8 +1,7 @@
 
+
 .App {
   text-align: left;
-
-
 }
 
 .pictry{ 
@@ -84,9 +83,14 @@ body {
 }
 form{ 
   flex-direction: column;
+background: 
+linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
   display:flex;
-  justify-content: center;
-  padding: 1rem;
+  padding: 40px;
+  max-width:1000px;
+  box-shadow:0 4px 10px 4px rgba(#13232f);
+  border-radius: 4px;
+  margin:40px auto;
 } 
 form > .className { 
   display:flex;
@@ -95,19 +99,19 @@ form > .className {
 }
 form > .capGrow { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 375px;
 }
 form > .startbiz { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 375px;
 }
 form > .finny { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 375px;
 }
 form > .livE { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 375px;
 }
 form > .info { 
   display:flex;
@@ -115,53 +119,73 @@ form > .info {
 }
 form > .inc { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
+
 }
 form > .expe { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 } 
 form > .fib { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 }
 form > .child { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 }
 form > .bannk { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 }
 form > .bannky { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
 }
 form > .bannkn { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
 }
 form > .stonkk { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 }
 form > .stonkky { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
 }
 form > .stonkkn { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
 }
 form > .finAS { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 345px;
 }
 form > .finASy { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
 }
 form > .finASn { 
   color:black;
-  margin-left: 40rem;
+  margin-left: 395px;
+}
+.submitb > .submitbutton { 
+  
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  justify-content: center; 
+  display:flex;
+
+}
+form > .submitb { 
+  justify-content:center; 
+  display:flex; 
+
 }

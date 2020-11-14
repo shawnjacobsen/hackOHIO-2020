@@ -67,27 +67,27 @@ const [costL,setcostL] = useState(0);
           
       
                 <label className="inc"> 
-                    Income <space></space>          
+                    Income <space></space>$          
                     <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)}/>
-                    </label> 
+                    </label> <br></br>
                 <label className="expe"> 
-                    Expenses <space></space>
+                    Expenses <space></space>$
                     <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)}/>
-                </label> 
+                </label> <br></br>
                 <label className="fib"> 
                     State Fib Code <space></space>
                     <input type="text" name="location" ref={register} onChange={event=>setloc(event.target.value)}/>
-                </label>
+                </label> <br></br>
                 <label className="child"> 
-                    Childern 
+                    Childern <space></space>
                     <input type="number" name="children" ref={register} onChange={event=>setkids(event.target.value)}/>
-                </label>
+                </label> <br></br>
                 <label className="bannk">Do you have a Bank?</label>
                 <label className="bannky"><space></space> Yes
                 <input name="Bank" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} /> 
                 </label><label className="bannkn"><space></space> No
                 <input name="Bank" type="radio" value="No" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} />
-                </label>
+                </label> <br></br>
                 
 
                 <label className="stonkk">Do you have a Mutual Funds or Stocks?</label>
@@ -95,20 +95,20 @@ const [costL,setcostL] = useState(0);
                     <input name="mutualfund" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)} /> 
                     </label><label className="stonkkn"> No 
                     <input name="mutualfund" type="radio" value="No" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)}/>
-                    </label> 
+                    </label> <br></br>
 
                     <label className="finAS">Do you have Finacial Assistance?</label>
                     <label className="finASy"><space></space> Yes
                     <input name="finass" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)} /> 
                     </label ><label className="finASn"><space></space> No
                     <input name="finass" type="radio" value="No" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)}/>
-                    </label> 
+                    </label> <br></br>
 
 
 
-                 <label>
+                 <label className="submitb">
              <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
-             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)}
+             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton"
              >Submit</button>
              </label>
 
