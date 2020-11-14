@@ -8,15 +8,15 @@ function FormsAndInputs(){
         <div className="FormsAndInputs"> 
          <form onSubmit={handleSubmit(onSubmit)}> 
           <label> 
-              Email           
-              <input type="email" name="email" ref={register}/>
+              Income           
+              <input type="number" name="income" ref={register}/>
               </label> 
           <label> 
-              Password 
-              <input type="password" name="password" ref={register}/>
+              Expenses 
+              <input type="number" name="expense" ref={register}/>
           </label> 
           <label> 
-              Location Name 
+              Location 
               <input type="text" name="location" ref={register}/>
           </label>
           <label>Do you have a Bank?</label>
@@ -24,6 +24,9 @@ function FormsAndInputs(){
         <input name="Bank" type="radio" value="Yes" ref={register({required: true })}/> 
         </label><label>No
         <input name="Bank" type="radio" value="No" ref={register({required: true })}/>
+        </label>
+        <label> 
+            
         </label>
             <label>
             <button type="submit">Submit</button>

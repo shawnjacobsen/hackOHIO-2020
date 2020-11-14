@@ -1,6 +1,6 @@
 
 .App {
-  text-align: center;
+  text-align: left;
 
 
 }
@@ -85,4 +85,5 @@ body {
 form{ 
   flex-direction: column;
   display:flex;
+  
 }
