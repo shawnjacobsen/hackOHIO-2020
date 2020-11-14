@@ -1,11 +1,16 @@
 import React, { Component } from 'react' 
 import {useForm} from "react-hook-form";
+import { useState, useEffect } from 'react';
 
-function FormsAndInputs(){ 
+function FormsAndInputs(props){ 
     const { register, handleSubmit } = useForm(); 
     const onSubmit = (values) => console.log(values);
 
+const [capG,setcapG] = useState(0);
 
+useEffect (()=> { 
+   document.title = `Sup ${capG}`;
+        });
 
     return( 
         <div className="FormsAndInputs"> 
@@ -18,11 +23,13 @@ function FormsAndInputs(){
                              register()
                              }/>
                        Capital Growth </label>
-                    <div></div>
+                    <div></div> 
+                    <button onClick = {()=>setcapG(capG ==1 ? 0:1)}> submitusdfus</button>
                     <label for="startBus">
                      <input name="startBus"  type="checkbox" id="startBus" ref={
-                   register()
-                     } />
+                  
+                  register()
+                     }  />
                     Starting a Business</label>
                     <div></div>
                     <label for="finCol">
