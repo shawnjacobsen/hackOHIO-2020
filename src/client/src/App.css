@@ -1,6 +1,7 @@
 
 .App {
-  text-align: left;
+  text-align: center;
+
 
 }
 
@@ -49,7 +50,7 @@ p {
 }
 
 body {
-  background-image: url(pic3.png);
+  background-image: url(446984.jpg);
   background-repeat: no-repeat;
 
 }
@@ -80,4 +81,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+form{ 
+  flex-direction: column;
+  display:flex;
 }

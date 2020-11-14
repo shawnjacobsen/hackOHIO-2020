@@ -7,7 +7,7 @@ import './happypeople.jpeg'
 function Dashboard() {
     return( 
         <div className= "pictrys">
-            <img src="happypeople.jpeg" background= "happypeople.jpeg" ></img>
+            
         </div>
     )
 }
