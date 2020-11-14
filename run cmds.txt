@@ -1,0 +1,5 @@
+install concurrently globally
+npm i concurrently -g
+
+Run server and client:
+concurrently "cd src/server && npm start" "cd src/client && npm start"

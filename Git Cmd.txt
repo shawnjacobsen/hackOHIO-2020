@@ -1,0 +1,51 @@
+https://rogerdudler.github.io/git-guide/
+cd C:\Users\garys\source\repos				// saved repos, must be in the repo to commit, push, etc
+
+git 							// command here
+-------
+init
+add README.md 						// markdown language #header name, then some description
+
+status
+add .
+commit -m 'first commit'
+remote add origin main					// adding main to remote repo
+
+clone github url
+push 							// do this for first time: -u origin main
+pull
+
+-------
+config --global user.email 'email here'			// there is also user.name
+rm --cached 						// file name.ext
+
+touch .gitignore 					//go to editor and add log.txt or /dir for folders or *.txt for all text files
+touch log.txt
+
+branch 							//name of branch
+checkout 						//name of branch or master
+merge 							//name of branch //you have to be in master to merge
+
+MAIN SETUP
+---------------------
+- Check that your checked out branch is "main"
+  1. run >git branch
+  2. the returned value should be "* main" in green letters.
+  3. if not run >git checkout main
+
+- Check that your remote is configured to GitHub properly
+  1. run >git remote
+  2. the returned value should be "origin"
+  3. if it is not run >git pull origin master
+
+- Check that your repository is updated to the latest commit
+  1. run >git pull origin master
+
+MAIN FLOW
+---------------------
+1) Make changes to the repository while minizing how much shit is broken :)
+2) Add this changes to the staging area by running >git add .
+3) Commit changes by running >git commit -m "**commit message**"
+   **commit message** is some message that says what changes you made
+4) Update your repository to the latest node by running >git pull
+5) Push your commits to the repo by running >git push
