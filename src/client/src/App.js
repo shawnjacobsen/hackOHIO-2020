@@ -7,7 +7,7 @@ import Login from "./Login";
 
 import Dashboard from "./Dashboard";
 import MatchingCard from "./MatchingCard";
-import Resource from "./Resource";
+
 import FormsAndInputs from "./NavBar/Form";
 
 function App() {
@@ -60,7 +60,7 @@ function App() {
             <Route path="/matchMaking" component={MatchingCard}/> 
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
-            <Route path="/resources" component={Resource} />
+
             
           </Switch>
         </div>

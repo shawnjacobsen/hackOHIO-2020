@@ -172,7 +172,7 @@ form > .child {
   margin-left: 345px;
 }
 .child > .child2 { 
-  width: 75px;
+  width: 80px;
   height:8px;
 box-sizing: border-box;
 font-family: montserrat;
@@ -215,6 +215,18 @@ form > .finASy {
   margin-left: 395px;
 }
 form > .finASn { 
+  color:black;
+  margin-left: 395px;
+}
+form > .mortgage{ 
+  color:black;
+  margin-left: 345px;
+}
+form > .mortgagey { 
+  color:black;
+  margin-left: 395px;
+}
+form > .mortgagen { 
   color:black;
   margin-left: 395px;
 }
