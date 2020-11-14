@@ -9,7 +9,28 @@ import { useState, useEffect } from 'react';
 
 function FormsAndInputs(){ 
     const { register, handleSubmit } = useForm(); 
-    const onSubmit = (values) => console.log(values);
+    const onSubmit = (values) => {
+        Axios({
+            method: "GET",
+            data: {
+              capG: capG,
+              bus: bus,
+              finC: finC,
+              liveE: lE,
+
+              NHHINC: rev,
+              HFIN_YN: finA,
+              HPRES_MORT: mortgage,
+              HDIV_YN: stonk,
+              NHUNDER18: kids,
+              HINT_YN: bank,
+              NRPP: loc
+            },
+            withCredentials: true,
+            url: "/api/advice",
+          }).then((res) => console.log(res));
+        console.log(values);
+    }
 
 const [capG,setcapG] = useState(0);
 const [bus,setbus] = useState(0); 
@@ -21,7 +42,8 @@ const [rev,setrev] = useState(0);
 const [exp,setexp] = useState(0);   
 const [loc,setloc] = useState("homeless"); 
 const [stonk,setstonk] = useState(0); 
-const [finA,setfinA] = useState(0);  
+const [finA,setfinA] = useState(0);
+const [mortgage, setMortgage] = useState(0);  
 
 const [finalI, setfinalI] = useState(0);
 const [finalA,setfinalA] = useState(0);
@@ -68,19 +90,19 @@ const [costL,setcostL] = useState(0);
       
                 <label className="inc"> 
                     Income <space></space>$          
-                    <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)} className="inc2"/>
+                    <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)}/>
                     </label> <br></br>
                 <label className="expe"> 
                     Expenses <space></space>$
-                    <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)} className="expe2"/>
+                    <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)}/>
                 </label> <br></br>
                 <label className="fib"> 
                     State Fib Code <space></space>
-                    <input type="text" name="location" ref={register} onChange={event=>setloc(event.target.value)} className="fib2"/>
+                    <input type="text" name="location" ref={register} onChange={event=>setloc(event.target.value)}/>
                 </label> <br></br>
                 <label className="child"> 
-                    Childern <space></space>
-                    <input type="number" name="children" ref={register} onChange={event=>setkids(event.target.value)} className="child2"/>
+                    Children <space></space>
+                    <input type="number" name="children" ref={register} onChange={event=>setkids(event.target.value)}/>
                 </label> <br></br>
                 <label className="bannk">Do you have a Bank?</label>
                 <label className="bannky"><space></space> Yes
@@ -104,6 +126,12 @@ const [costL,setcostL] = useState(0);
                     <input name="finass" type="radio" value="No" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)}/>
                     </label> <br></br>
 
+                    <label className="mortgage">Do you have a mortgage?</label>
+                    <label className="mortgagey"><space></space> Yes 
+                    <input name="mortgage" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)} /> 
+                    </label><label className="mortgagen"> No 
+                    <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
+                    </label> <br></br>
 
 
                  <label className="submitb">
@@ -117,8 +145,7 @@ const [costL,setcostL] = useState(0);
 
 
     )
-
-//idzfhuifvsdkSS
+//big cock
 
 }
 
