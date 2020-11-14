@@ -7,6 +7,9 @@ function FormsAndInputs(props){
     const onSubmit = (values) => console.log(values);
 
 const [capG,setcapG] = useState(0);
+const [bus,setbus] = useState(0); 
+const [finC,setfinC] = useState(0); 
+const [lE,setlE] = useState(0);
 
 useEffect (()=> { 
    document.title = `Sup ${capG}`;
@@ -21,27 +24,27 @@ useEffect (()=> {
                 <label for="capGrowth"> 
                         <input  name="capGrowth" id="capGrowth" type="checkbox" ref={
                              register()
-                             }/>
+                             } onInput = {()=>setcapG(capG ==1 ? 0:1)}/>  
                        Capital Growth </label>
                     <div></div> 
-                    <button onClick = {()=>setcapG(capG ==1 ? 0:1)}> submitusdfus</button>
+                   
                     <label for="startBus">
                      <input name="startBus"  type="checkbox" id="startBus" ref={
                   
                   register()
-                     }  />
+                     } onInput = {()=>setbus(bus ==1 ? 0:1)} />
                     Starting a Business</label>
                     <div></div>
                     <label for="finCol">
                     <input name="finCol" type="checkbox" id="finCol" ref={
                 register()
-                 }/>
+                 } onInput = {()=>setfinC(finC ==1 ? 0:1)}/>
                 Financing College</label>
              <div></div>
              <label for="livingExpense">
                 <input name="livingExpense" type="checkbox" id="livingExpense" ref={
                 register()
-                } />
+                } onInput = {()=>setlE(lE ==1 ? 0:1)}/>
                 Budget Living Expenses</label>
                     <div></div>
           
