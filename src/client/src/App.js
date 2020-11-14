@@ -8,6 +8,7 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import MatchingCard from "./MatchingCard";
 import Resource from "./Resource";
+import FormsAndInputs from "./NavBar/Form";
 
 function App() {
   const [loginUsername, setloginUsername] = useState("");
@@ -51,7 +52,8 @@ function App() {
     return( 
       <Router>
         <div className="App"> 
-          <Navbar />
+          <Navbar /> 
+          <FormsAndInputs/>
           
           <Switch> 
             <Route path="/" exact><Redirect to="/dashboard" /></Route>
