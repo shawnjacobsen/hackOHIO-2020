@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {useForm} from "react-hook-form";
 import { useState, useEffect } from 'react';
 
-function FormsAndInputs(props){ 
+function FormsAndInputs(){ 
     const { register, handleSubmit } = useForm(); 
     const onSubmit = (values) => console.log(values);
 
@@ -10,9 +10,15 @@ const [capG,setcapG] = useState(0);
 const [bus,setbus] = useState(0); 
 const [finC,setfinC] = useState(0); 
 const [lE,setlE] = useState(0);
+const [bank,setbank] = useState(0); 
+const [kids,setkids] = useState(0); 
+const [rev,setrev] = useState(0); 
+const [exp,setexp] = useState(0);   
+const [loc,setloc] = useState("homeless"); 
+const [stonk,setstonk] = useState(0);  
 
 useEffect (()=> { 
-   document.title = `Sup ${capG}`;
+   document.title = `Sup ${rev}`;
         });
 
     return( 
@@ -54,50 +60,38 @@ useEffect (()=> {
       
                 <label> 
                     Income           
-                    <input type="number" name="income" ref={register}/>
+                    <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)}/>
                     </label> 
                 <label> 
                     Expenses 
-                    <input type="number" name="expense" ref={register}/>
+                    <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)}/>
                 </label> 
                 <label> 
                     Location 
-                    <input type="text" name="location" ref={register}/>
+                    <input type="text" name="location" ref={register} onChange={event=>setloc(event.target.value)}/>
+                </label>
+                <label> 
+                    Childern 
+                    <input type="number" name="children" ref={register} onChange={event=>setkids(event.target.value)}/>
                 </label>
                 <label>Do you have a Bank?</label>
                 <label>Yes
-                <input name="Bank" type="radio" value="Yes" ref={register({required: true })}/> 
+                <input name="Bank" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} /> 
                 </label><label>No
-                <input name="Bank" type="radio" value="No" ref={register({required: true })}/>
+                <input name="Bank" type="radio" value="No" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} />
                 </label>
                 
-                <label>Do you have a Portfolio?</label>
-                <label>Yes
-                <input name="portfolio" type="radio" value="Yes" ref={register({required: true })}  /> 
-                </label><label>No
-                <input name="portfolio" type="radio" value="No" ref={register({required: true })} />
-                </label>
-                
-                    <label>Do you have a Mutual Fund?</label>
+
+                <label>Do you have a Mutual Funds or Stocks?</label>
                     <label>Yes
-                    <input name="mutualfund" type="radio" value="Yes" ref={register({required: true })}/> 
+                    <input name="mutualfund" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)} /> 
                     </label><label>No
-                    <input name="mutualfund" type="radio" value="No" ref={register({required: true })}/>
+                    <input name="mutualfund" type="radio" value="No" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)}/>
                     </label> 
-                    <label> 
-                    Number of Stocks held 
-                    <input type="number" name="stocks" ref={register}/>
-                </label>
-                <label>Do you have a Mortgage?</label>
-                    <label>Yes
-                    <input name="mortgage" type="radio" value="Yes" ref={register({required: true })}/> 
-                    </label><label>No
-                    <input name="mortgage" type="radio" value="No" ref={register({required: true })}/>
-                    </label> 
-                    
+
 
                  <label>
-             <button type="submit">Submit</button>
+             <button type="submit" >Submit</button>
              </label>
 
             </form>
@@ -109,4 +103,9 @@ useEffect (()=> {
 
 
 }
+
+
+
+
+
 export default FormsAndInputs;
