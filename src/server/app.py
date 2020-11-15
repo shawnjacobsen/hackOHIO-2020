@@ -40,7 +40,7 @@ def hello_world():
 @app.route("/api/advice", methods=['GET'])
 
 def predict():
-    input_vars = [[request.json[df_cols[0]], request.json[df_cols[1]], request.json[df_cols[2]], request.json[df_cols[3]], request.json[df_cols[4]], request.json[df_cols[5]], FIPtoRPP(request.json[df_cols[6]])]]
+    input_vars = [[request.json[df_cols[0]], request.json[df_cols[1]], request.json[df_cols[2]], request.json[df_cols[3]], request.json[df_cols[4]], request.json[df_cols[5]], FIPtoRPP(str(request.json[df_cols[6]]))]]
 
     params_npArray = np.array(input_vars)
 
