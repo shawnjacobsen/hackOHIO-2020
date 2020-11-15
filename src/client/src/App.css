@@ -264,3 +264,7 @@ form > .mortgagen {
   justify-content: center; 
   display:flex; 
 }
+
+.FormsAndInputs {
+  height: 10000px;
+}

@@ -66,9 +66,10 @@ const FormsAndInputs = () => {
     }
 
     const MyResponsiveRadar = (chartRoot) => (
+
         <ResponsiveRadar
-            data={chartRoot}
-            keys={ 'value' }
+            data={test}
+            keys={[ 'value' ]}
             indexBy="title"
             maxValue="auto"
             margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
@@ -116,7 +117,7 @@ const FormsAndInputs = () => {
         />
     )
 
-const[response,setResponse] = useState({'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0});
+const[response,setResponse] = useState([{'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}]);
 
 const [capG,setcapG] = useState(0);
 const [bus,setbus] = useState(0); 
