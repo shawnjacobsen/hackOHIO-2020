@@ -30,8 +30,10 @@ function FormsAndInputs(){
               NRPP: loc
             },
             withCredentials: true,
-            url: "/api/advice",
-          }).then((res) => console.log(res));
+            url: "https://stonks-io.herokuapp.com/api/advice",
+          }).then((res) => {
+              console.log(res.json);
+          });
         console.log(values);
     }
 

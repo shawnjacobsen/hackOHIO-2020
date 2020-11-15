@@ -4,11 +4,27 @@ import pickle
 import joblib
 import pandas as pd
 import numpy as np
+import csv
 
 # comment
 # Get headers for payload
 df_cols = ['NHHINC', 'HFIN_YN', 'HPRES_MORT', 'HDIV_YN', 'NHUNDER18', 'HINT_YN', 'NRPP']
 return_cols = ['relocate', 'get_bank_account', 'get_credit_card', 'fin_diversification', 'fin_consolidation']
+
+N_RPP = 118.1
+
+def FIPtoRPP(FIP):
+    datafile = open('RPP_key.csv', 'r')
+    datareader = csv.reader(datafile, delimiter=',')
+    data = []
+    for row in datareader:
+        data.append(row) 
+    npArray = np.array(data)
+    rows, cols = np.where(npArray == FIP)
+    val = (data[rows[0]][1]) / N_RPP
+    return val
+
+print(FIPtoRPP(23))
 
 # Importing model
 model = joblib.load('beep_boop_stonks.joblib')
@@ -24,7 +40,7 @@ def hello_world():
 @app.route("/api/advice", methods=['GET'])
 
 def predict():
-    input_vars = [[request.json[df_cols[0]], request.json[df_cols[1]], request.json[df_cols[2]], request.json[df_cols[3]], request.json[df_cols[4]], request.json[df_cols[5]], request.json[df_cols[6]]]]
+    input_vars = [[request.json[df_cols[0]], request.json[df_cols[1]], request.json[df_cols[2]], request.json[df_cols[3]], request.json[df_cols[4]], request.json[df_cols[5]], FIPtoRPP(request.json[df_cols[6]])]]
 
     params_npArray = np.array(input_vars)
 
