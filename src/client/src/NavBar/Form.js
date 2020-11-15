@@ -1,8 +1,11 @@
 import React, { Component } from 'react' 
 import {useForm} from "react-hook-form";
 import { useState, useEffect } from 'react';
-
+import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Axios from 'axios';
+
+
 
 
 
@@ -31,6 +34,10 @@ function FormsAndInputs(){
           }).then((res) => console.log(res));
         console.log(values);
     }
+
+
+
+const[resource,setresource] = useState(false);
 
 const [capG,setcapG] = useState(0);
 const [bus,setbus] = useState(0); 
@@ -135,9 +142,11 @@ const [costL,setcostL] = useState(0);
 
 
                  <label className="submitb">
+                    <Link to= '/resource' >
              <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
-             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" /*onClick = {()=> url(resourse)}*/
+             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
              >Submit</button>
+            </Link>
              </label>
 
             </form>
