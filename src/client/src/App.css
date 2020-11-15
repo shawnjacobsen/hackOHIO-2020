@@ -49,7 +49,7 @@ p {
 }
 
 body {
-  background-image: url(446984.jpg);
+  background-image: url(background.png);
   background-repeat: no-repeat;
 
 }
@@ -121,74 +121,92 @@ form > .inc {
   color:black;
   margin-left: 345px;
 
-
-font-family: montserrat;
-
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 .inc > .inc2 { 
+  margin-left: 13px;
   width: 125px;
   height:8px;
+  
 box-sizing: border-box;
-font-family: montserrat;
-color: #2C3E50;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
-padding: 15px;
+padding: 10px;
 border: 1px solid rgb(185, 170, 170);
 
+}
+.textN{ 
+  padding-right:40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
 }
 form > .expe { 
   color:black;
   margin-left: 345px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 } 
 .expe > .expe2 { 
   width: 125px;
   height:8px;
+  
 box-sizing: border-box;
-font-family: montserrat;
-color: #2C3E50;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
-padding: 15px;
+padding: 10px;
 border: 1px solid rgb(185, 170, 170);
 
 }
 form > .fib { 
   color:black;
   margin-left: 345px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .fib > .fib2 { 
-  width: 125px;
+  width: 65px;
   height:8px;
+  margin-left: -31px;
+  
 box-sizing: border-box;
-font-family: montserrat;
-color: #2C3E50;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
-padding: 15px;
+padding: 10px;
 border: 1px solid rgb(185, 170, 170);
 
 }
 form > .child { 
   color:black;
   margin-left: 345px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
 }
 .child > .child2 { 
-  width: 75px;
+  width: 65px;
   height:8px;
+  margin-left: 7px;
 box-sizing: border-box;
-font-family: montserrat;
-color: #2C3E50;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
-padding: 15px;
+padding: 10px;
 border: 1px solid rgb(185, 170, 170);
 
 }
 form > .bannk { 
   color:black;
   margin-left: 345px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 form > .bannky { 
   color:black;
-  margin-left: 395px;
+  margin-left: 391px;
 }
 form > .bannkn { 
   color:black;
@@ -197,10 +215,11 @@ form > .bannkn {
 form > .stonkk { 
   color:black;
   margin-left: 345px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 form > .stonkky { 
   color:black;
-  margin-left: 395px;
+  margin-left: 391px;
 }
 form > .stonkkn { 
   color:black;
@@ -209,12 +228,26 @@ form > .stonkkn {
 form > .finAS { 
   color:black;
   margin-left: 345px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 form > .finASy { 
   color:black;
-  margin-left: 395px;
+  margin-left: 391px;
 }
 form > .finASn { 
+  color:black;
+  margin-left: 395px;
+}
+form > .mortgage{ 
+  color:black;
+  margin-left: 345px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+form > .mortgagey { 
+  color:black;
+  margin-left: 391px;
+}
+form > .mortgagen { 
   color:black;
   margin-left: 395px;
 }
