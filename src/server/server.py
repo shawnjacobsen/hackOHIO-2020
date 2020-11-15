@@ -39,11 +39,23 @@ def predict():
     params_npArray = np.array(input_vars)
 
     # Get the model's prediction
-    prediction_proba = model.predict_proba(params_npArray)
+    prediction_0 = model.predict_proba(params_npArray)[0,0]
+    prediction_1 = model.predict_proba(params_npArray)[0,1]
+    prediction_2 = model.predict_proba(params_npArray)[0,2]
+    prediction_3 = model.predict_proba(params_npArray)[0,3]
+    prediction_4 = model.predict_proba(params_npArray)[0,4]
 
     # prediction = (prediction_proba[0])[1]
     
-    ret = '{"prediction":' + str(prediction_proba) + '}'
+    ret = (
+        f'{{'
+        f'"{return_cols[0]}": "{str(prediction_0)}",'
+        f'"{return_cols[1]}": "{str(prediction_1)}",'
+        f'"{return_cols[2]}": "{str(prediction_2)}",'
+        f'"{return_cols[3]}": "{str(prediction_3)}",'
+        f'"{return_cols[4]}": "{str(prediction_4)}"'
+        f'}}'
+    )
     
     return ret
 
