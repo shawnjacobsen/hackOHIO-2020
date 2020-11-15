@@ -68,7 +68,7 @@ const FormsAndInputs = () => {
     const RadarChart = () => (
         <div className="RadarChartContainer">
           <Radar
-            width={500}
+            width={520}
             height={500}
             margin={{ top: 60, right: 60, bottom: 60, left: 60 }}
             data={response}
@@ -115,7 +115,7 @@ const FormsAndInputs = () => {
         }
       };
 
-const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':10}, {'title':'Relocate', 'value':5}, {'title':'Get Bank Account', 'value':9}, {'title':'Diversify', 'value':0}, {'title':'Diversify', 'value':0}]);
+const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':10}, {'title':'Relocate', 'value':5}, {'title':'Get Bank Account', 'value':9}, {'title':'Diversify', 'value':0}, {'title':'Consolidate', 'value':0}]);
 
 const [test, setTest] = useState( {'title':'Consolidate', 'value':0});
 const [capG,setcapG] = useState(0);
@@ -216,7 +216,7 @@ const [costL,setcostL] = useState(0);
                     <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
                     </label> <br></br>
 
-             <button className="submitb" type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
+             <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
              onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
              >Submit</button>
 
