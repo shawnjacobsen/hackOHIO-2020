@@ -224,7 +224,7 @@ const [costL,setcostL] = useState(0);
             </form>
             <div className="results-section">
                 <h1>YOUR ADVISING RESULTS</h1>
-                <RadarChart/>                
+                <RadarChart/>
             </div>
 
         </div>
