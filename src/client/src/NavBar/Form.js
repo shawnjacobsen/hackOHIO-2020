@@ -131,7 +131,7 @@ const FormsAndInputs = () => {
         }
       };
 
-const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':0}, {'title':'Relocate', 'value':0}, {'title':'Get Bank Account', 'value':0}, {'title':'Diversify', 'value':0}, {'title':'Diversify', 'value':0}]);
+const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':0}, {'title':'Relocate', 'value':0}, {'title':'Get Bank Account', 'value':0}, {'title':'Diversify', 'value':0}, {'title':'Consolidate', 'value':0}]);
 const[advise, setAdvise] = useState(["","","",""]);
 
 const [test, setTest] = useState( {'title':'Consolidate', 'value':0});
