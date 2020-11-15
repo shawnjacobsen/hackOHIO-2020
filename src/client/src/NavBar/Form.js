@@ -14,13 +14,13 @@ const FormsAndInputs = () => {
     const {register, handleSubmit, errors } = useForm();
     const onSubmit = async (data) => {
         const jsonReq = JSON.stringify({
-            NHHINC: rev.toString(),
-            HFIN_YN: finA.toString(),
-            HPRES_MORT: mortgage.toString(),
-            HDIV_YN: stonk.toString(),
-            NHUNDER18: kids.toString(),
-            HINT_YN: bank.toString(),
-            NRPP: loc.toString()
+            NHHINC: rev,
+            HFIN_YN: finA,
+            HPRES_MORT: mortgage,
+            HDIV_YN: stonk,
+            NHUNDER18: kids,
+            HINT_YN: bank,
+            NRPP: loc
         });
 
         console.log(jsonReq)
@@ -59,11 +59,27 @@ const FormsAndInputs = () => {
                     'value': res.fin_consolidation
                 }
             ]
-            console.log(chartRoot)
+
+            console.log(chartRoot);
+            console.log(res.advise);
+
+            setAdvise(res.advise);
             setResponse(chartRoot);
         })
 
     }
+
+    const AdviseList = () => (
+        <div className="AdviseList">
+            <h2>YOUR CURATED FINANCIAL ADVICE</h2>
+            <ul>
+                <li>{advise[0]}</li>
+                <li>{advise[1]}</li>
+                <li>{advise[2]}</li>
+                <li>{advise[3]}</li>                
+            </ul>
+        </div>
+    )
 
     const RadarChart = () => (
         <div className="RadarChartContainer">
@@ -115,7 +131,8 @@ const FormsAndInputs = () => {
         }
       };
 
-const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':10}, {'title':'Relocate', 'value':5}, {'title':'Get Bank Account', 'value':9}, {'title':'Diversify', 'value':0}, {'title':'Diversify', 'value':0}]);
+const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':0}, {'title':'Relocate', 'value':0}, {'title':'Get Bank Account', 'value':0}, {'title':'Diversify', 'value':0}, {'title':'Diversify', 'value':0}]);
+const[advise, setAdvise] = useState(["","","",""]);
 
 const [test, setTest] = useState( {'title':'Consolidate', 'value':0});
 const [capG,setcapG] = useState(0);
@@ -222,9 +239,13 @@ const [costL,setcostL] = useState(0);
 
                 
             </form>
+
             <div className="results-section">
                 <h1>YOUR ADVISING RESULTS</h1>
-                <RadarChart/>
+                <div className="container">
+                    <RadarChart/>
+                    <AdviseList/>
+                </div>
             </div>
 
         </div>
