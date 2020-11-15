@@ -89,19 +89,19 @@ const [costL,setcostL] = useState(0);
           
       
                 <label className="inc"> 
-                    Income: <space></space>$          
+                    <span className= "textN">Income:</span> <space></space>          
                     <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)} className="inc2"/>
                     </label> <br></br>
                 <label className="expe"> 
-                    Expenses: <space></space>$
+                <span className= "textN">Expenses:</span> <space></space>
                     <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)} className="expe2"/>
                 </label> <br></br>
                 <label className="fib"> 
-                    State Fib Code: <space></space>
+                <span className= "textN">  State Fib Code:</span> <space></space>
                     <input type="text" name="location" ref={register} className="fib2" onChange={event=>setloc(event.target.value)} />
                 </label> <br></br>
                 <label className="child"> 
-                    Children: <space></space>
+                <span className= "textN"> Children: </span><space></space>
                     <input type="number" name="children" ref={register} className="child2" onChange={event=>setkids(event.target.value)} />
                 </label> <br></br>
                 <label className="bannk">Do you have a Bank?</label>

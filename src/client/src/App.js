@@ -53,12 +53,12 @@ function App() {
       <Router>
         <div className="App"> 
           <Navbar /> 
-          <FormsAndInputs/>
+          
           
           <Switch> 
             <Route path="/" exact><Redirect to="/dashboard" /></Route>
             <Route path="/matchMaking" component={MatchingCard}/> 
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={FormsAndInputs} />
             <Route path="/login" component={Login} />
 
             

@@ -49,7 +49,7 @@ p {
 }
 
 body {
-  background-image: url(446984.jpg);
+  background-image: url(background.png);
   background-repeat: no-repeat;
 
 }
@@ -120,22 +120,28 @@ form > .info {
 form > .inc { 
   color:black;
   margin-left: 345px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 .inc > .inc2 { 
+  margin-left: 13px;
   width: 125px;
   height:8px;
   
 box-sizing: border-box;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-color: #2C3E50;
-background-color: rgba(255, 255, 255, 0.5);
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
 padding: 10px;
 border: 1px solid rgb(185, 170, 170);
 
+}
+.textN{ 
+  padding-right:40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
 }
 form > .expe { 
   color:black;
@@ -148,8 +154,8 @@ form > .expe {
   
 box-sizing: border-box;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-color: #2C3E50;
-background-color: rgba(255, 255, 255, 0.5);
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
 padding: 10px;
 border: 1px solid rgb(185, 170, 170);
@@ -161,13 +167,14 @@ form > .fib {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .fib > .fib2 { 
-  width: 125px;
+  width: 65px;
   height:8px;
+  margin-left: -31px;
   
 box-sizing: border-box;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-color: #2C3E50;
-background-color: rgba(255, 255, 255, 0.5);
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
 padding: 10px;
 border: 1px solid rgb(185, 170, 170);
@@ -177,15 +184,16 @@ form > .child {
   color:black;
   margin-left: 345px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  
 }
 .child > .child2 { 
   width: 65px;
   height:8px;
-  
+  margin-left: 7px;
 box-sizing: border-box;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-color: #2C3E50;
-background-color: rgba(255, 255, 255, 0.5);
+color: #0a0d11;
+background-color: transparent;
 font-size: 13px;
 padding: 10px;
 border: 1px solid rgb(185, 170, 170);

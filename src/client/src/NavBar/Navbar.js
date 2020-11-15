@@ -18,7 +18,7 @@ class Navbar extends Component {
       <nav className="NavbarItems">
          <h1 className="navbar-logo"> Stonks.io <img src="springWhite.png" width="50px" height="50px"></img> </h1> 
            <div className="menu-icon" onClick={this.handleClick}><i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i> </div>
-            <ul className={this.state.cliscked ? 'nav-menu active' : 'nav-menu'}>
+            <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
               {MenuItems.map((item, index) => { 
                return ( 
                     <li key={index}>
