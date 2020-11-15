@@ -10,25 +10,35 @@ import Axios from 'axios';
 
 
 const FormsAndInputs = () => { 
-    const {register, handleSubmit, errors } = useForm();
-    const onSubmit = (data) => {
-        Axios.get(`https://stonks-io.herokuapp.com/api/advice`,{
-            capG: capG,
-            bus: bus,
-            finC: finC,
-            liveE: lE,
 
-            NHHINC: rev,
-            HFIN_YN: finA,
-            HPRES_MORT: mortgage,
-            HDIV_YN: stonk,
-            NHUNDER18: kids,
-            HINT_YN: bank,
-            NRPP: loc
-        }).then((res) => {
-            console.log(res);
-            console.log(res.data);
+    const {register, handleSubmit, errors } = useForm();
+    const onSubmit = async (data) => {
+        const jsonReq = JSON.stringify({
+            NHHINC: rev.toString(),
+            HFIN_YN: finA.toString(),
+            HPRES_MORT: mortgage.toString(),
+            HDIV_YN: stonk.toString(),
+            NHUNDER18: kids.toString(),
+            HINT_YN: bank.toString(),
+            NRPP: loc.toString()
+        });
+
+        console.log(jsonReq)
+        
+        await fetch(`https://stonks-io.herokuapp.com/api/advice`, {
+        method: "POST",
+        body: jsonReq,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        credentials: "same-origin"
+        }).then((response) => {
+            console.log(response)
+            return response.json()
+        }).then(body => {
+            console.log(body)
         })
+
     }
 
 
