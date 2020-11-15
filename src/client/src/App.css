@@ -268,3 +268,14 @@ form > .mortgagen {
 .FormsAndInputs {
   height: 150%;
 }
+.RadarChartContainer {
+  text-align: center;
+}
+.results-section {
+  text-align: center;
+}
+
+.results-section h1 {
+  font-size: 28px;
+  color: white;
+}

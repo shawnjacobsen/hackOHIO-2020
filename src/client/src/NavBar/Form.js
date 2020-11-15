@@ -39,7 +39,7 @@ const FormsAndInputs = () => {
             console.log(res)
             const chartRoot = [
                 {
-                    'title': 'Get a credit card',
+                    'title': 'Improve Your Credit',
                     'value': res.get_credit_card
                 },
                 {
@@ -47,7 +47,7 @@ const FormsAndInputs = () => {
                     'value': res.relocate
                 },
                 {
-                    'title': 'Get bank account',
+                    'title': 'Get Bank Account',
                     'value': res.get_bank_account
                 },
                 {
@@ -67,7 +67,6 @@ const FormsAndInputs = () => {
 
     const RadarChart = () => (
         <div className="RadarChartContainer">
-          <h3>Radar</h3>
           <Radar
             width={500}
             height={500}
@@ -75,12 +74,12 @@ const FormsAndInputs = () => {
             data={response}
             indexBy="title"
             keys={["value"]}
-            colors={["#800391", "#2b70e2"]}
+            colors={["#9b59b6", "#6B3880"]}
             theme={theme}
             dotSize={30}
             enableDotLabel={true}
             dotLabelYOffset={4}
-            gridShape="linear" 
+            gridShape="linear"
           />
         </div>
     )
@@ -223,7 +222,11 @@ const [costL,setcostL] = useState(0);
 
                 
             </form>
-            <RadarChart/>
+            <div className="results-section">
+                <h1>YOUR ADVISING RESULTS</h1>
+                <RadarChart/>                
+            </div>
+
         </div>
     )
 //big cock  8=========D<
