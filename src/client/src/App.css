@@ -262,11 +262,6 @@ form > .mortgagen {
   cursor: pointer;
   padding: 10px 5px;
   justify-content: center; 
-  display:flex;
-
-}
-form > .submitb { 
   justify-content:center; 
   display:flex; 
-
 }

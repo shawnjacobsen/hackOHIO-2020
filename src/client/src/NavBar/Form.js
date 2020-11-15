@@ -9,10 +9,10 @@ import Axios from 'axios';
 
 
 
-
-function FormsAndInputs(){ 
-    const { register, handleSubmit } = useForm(); 
-    const onSubmit = (values) => {
+const FormsAndInputs = () => { 
+    const {register, handleSubmit, errors } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
         Axios({
             method: "GET",
             data: {
@@ -34,7 +34,6 @@ function FormsAndInputs(){
           }).then((res) => {
               console.log(res.json);
           });
-        console.log(values);
     }
 
 
@@ -62,9 +61,7 @@ const [costL,setcostL] = useState(0);
 
     return( 
         <div className="FormsAndInputs"> 
-         <form onSubmit={handleSubmit(onSubmit)}> 
-          
-          
+         <form> 
                 <h1 className="className">Possible Goals for Stonks.io?</h1>
                 <label for="capGrowth" className="capGrow"> 
                         <input  name="capGrowth" id="capGrowth" type="checkbox" ref={
@@ -142,21 +139,16 @@ const [costL,setcostL] = useState(0);
                     <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
                     </label> <br></br>
 
-
-                 <label className="submitb">
-                    <Link to= '/resource' >
-             <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
+             <button className="submitb" type="submit" onClick={e => onSubmit(e)} onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
              onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
              >Submit</button>
-            </Link>
-             </label>
 
             </form>
         </div>
 
 
     )
-//big cock
+//big cock  8=========D<
 
 }
 
