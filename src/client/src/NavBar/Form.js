@@ -40,23 +40,23 @@ const FormsAndInputs = () => {
             const chartRoot = [
                 {
                     'title': 'Improve Your Credit',
-                    'value': res.get_credit_card
+                    'value': res.get_credit_card*(finC==1 ? 1.1:0.9)*(bus==1 ? 1.1:0.9)
                 },
                 {
                     'title': 'Relocate',
-                    'value': res.relocate
+                    'value': res.relocate*(finC==1 ? 0.9:1.1)*(capG==1 ? 1.1:0.9)
                 },
                 {
                     'title': 'Get Bank Account',
-                    'value': res.get_bank_account
+                    'value': res.get_bank_account*(bus==1 ? 1.1:0.9)*(lE==1 ? 1.1:0.9)
                 },
                 {
                     'title': 'Diversify',
-                    'value': res.fin_diversification
+                    'value': res.fin_diversification*(lE==1 ? 1.1:0.9)*(finC==1 ? 1.1:0.9)
                 },
                 {
                     'title': 'Consolidate',
-                    'value': res.fin_consolidation
+                    'value': res.fin_consolidation*(capG==1 ? 1.1:.9)*(lE==1 ? 0.9:1.1)
                 }
             ]
             console.log(chartRoot)
