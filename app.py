@@ -5,6 +5,7 @@ import joblib
 import pandas as pd
 import numpy as np
 
+# comment
 # Get headers for payload
 df_cols = ['NHHINC', 'HFIN_YN', 'HPRES_MORT', 'HDIV_YN', 'NHUNDER18', 'HINT_YN', 'NRPP']
 return_cols = ['relocate', 'get_bank_account', 'get_credit_card', 'fin_diversification', 'fin_consolidation']
