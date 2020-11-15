@@ -10,6 +10,16 @@ import numpy as np
 df_cols = ['NHHINC', 'HFIN_YN', 'HPRES_MORT', 'HDIV_YN', 'NHUNDER18', 'HINT_YN', 'NRPP']
 return_cols = ['relocate', 'get_bank_account', 'get_credit_card', 'fin_diversification', 'fin_consolidation']
 
+def FIPtoRPP(FIP):
+    datafile = open('RPP_key.csv', 'r')
+    datareader = csv.reader(datafile, delimiter=',')
+    data = []
+    for row in datareader:
+        data.append(row) 
+    npArray = np.array(data)
+    rows, cols = np.where(npArray == FIP)
+    return(data[rows[0]][1])
+
 # Importing model
 model = joblib.load('beep_boop_stonks.joblib')
 
