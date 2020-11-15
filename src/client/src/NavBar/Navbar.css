@@ -1,19 +1,26 @@
 .NavbarItems{ 
-    background:linear-gradient(90deg,rgb(0, 0, 0) 0%,rgb(0, 0, 0) 100%); 
+    background:black;; 
     height: 100px;
     display:flex;
     font-size: 1.5rem; 
     justify-content: center; 
     align-items: center; 
+    margin-top: 0px;
 
 }
-
-
+.logoStuff{ 
+    margin-top: -70px;
+    margin-left: 200px;
+}
+.stonkName{ 
+    margin-top: 30px;
+}
 
 .navbar-logo{ 
     color: #fff;  
     justify-content: start;
-    cursor: pointer; 
+    cursor: pointer;
+   
 } 
 
 .fa-react{ 
