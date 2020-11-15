@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
-import { ResponsiveRadar } from '@nivo/radar'
+import { Radar } from '@nivo/radar'
 
 
 
@@ -59,65 +59,66 @@ const FormsAndInputs = () => {
                     'value': res.fin_consolidation
                 }
             ]
-
+            console.log(chartRoot)
             setResponse(chartRoot);
         })
 
     }
 
-    const MyResponsiveRadar = (chartRoot) => (
-        <ResponsiveRadar
-            data={chartRoot}
-            keys={ 'value' }
+    const RadarChart = () => (
+        <div className="RadarChartContainer">
+          <h3>Radar</h3>
+          <Radar
+            width={500}
+            height={500}
+            margin={{ top: 60, right: 60, bottom: 60, left: 60 }}
+            data={response}
             indexBy="title"
-            maxValue="auto"
-            margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
-            curve="linearClosed"
-            borderWidth={2}
-            borderColor={{ from: 'color' }}
-            gridLevels={5}
-            gridShape="circular"
-            gridLabelOffset={36}
-            enableDots={true}
-            dotSize={10}
-            dotColor={{ theme: 'background' }}
-            dotBorderWidth={2}
-            dotBorderColor={{ from: 'color' }}
+            keys={["value"]}
+            colors={["#800391", "#2b70e2"]}
+            theme={theme}
+            dotSize={30}
             enableDotLabel={true}
-            dotLabel="value"
-            dotLabelYOffset={-12}
-            colors={{ scheme: 'nivo' }}
-            fillOpacity={0.25}
-            blendMode="multiply"
-            animate={true}
-            motionConfig="wobbly"
-            isInteractive={true}
-            legends={[
-                {
-                    anchor: 'top-left',
-                    direction: 'column',
-                    translateX: -50,
-                    translateY: -40,
-                    itemWidth: 80,
-                    itemHeight: 20,
-                    itemTextColor: '#999',
-                    symbolSize: 12,
-                    symbolShape: 'circle',
-                    effects: [
-                        {
-                            on: 'hover',
-                            style: {
-                                itemTextColor: '#000'
-                            }
-                        }
-                    ]
-                }
-            ]}
-        />
+            dotLabelYOffset={4}
+            gridShape="linear" 
+          />
+        </div>
     )
 
-const[response,setResponse] = useState({'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0}, {'title':'', 'value':0});
+    const theme = {
+        axis: {
+          ticks: {
+            text: {
+              fill: "rgba(255, 255, 255, .35)"
+            }
+          }
+        },
+        grid: {
+          line: {
+            stroke: "rgba(255, 255, 255, .15)",
+            strokeDasharray: "6 4"
+          }
+        },
+        dots: {
+          text: {
+            fill: "#2d374d",
+            fontSize: 12,
+            fontWeight: 800
+          }
+        },
+        tooltip: {
+          container: {
+            background: "#2d374d",
+            color: "inherit",
+            boxShadow: "0 3px 9px rgba(0, 0, 0, 0.5)",
+            fontFamily: "monospace"
+          }
+        }
+      };
 
+const[response,setResponse] = useState([{'title':'Get A Credit Card', 'value':10}, {'title':'Relocate', 'value':5}, {'title':'Get Bank Account', 'value':9}, {'title':'Diversify', 'value':0}, {'title':'Diversify', 'value':0}]);
+
+const [test, setTest] = useState( {'title':'Consolidate', 'value':0});
 const [capG,setcapG] = useState(0);
 const [bus,setbus] = useState(0); 
 const [finC,setfinC] = useState(0); 
@@ -222,10 +223,8 @@ const [costL,setcostL] = useState(0);
 
                 
             </form>
-            <MyResponsiveRadar {...response}/>
+            <RadarChart/>
         </div>
-
-
     )
 //big cock  8=========D<
                 
