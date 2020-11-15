@@ -7,10 +7,10 @@ import Axios from 'axios';
 
 
 
-function FormsAndInputs(){ 
+async function FormsAndInputs(){ 
     const { register, handleSubmit } = useForm(); 
-    const onSubmit = (values) => {
-        Axios({
+    const onSubmit = async (values) => {
+        await Axios({
             method: "GET",
             data: {
               capG: capG,
@@ -27,7 +27,7 @@ function FormsAndInputs(){
               NRPP: loc
             },
             withCredentials: true,
-            url: "/api/advice",
+            url: "https://stonks-io.herokuapp.com/api/advice",
           }).then((res) => console.log(res));
         console.log(values);
     }
