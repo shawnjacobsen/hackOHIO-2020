@@ -12,28 +12,23 @@ import Axios from 'axios';
 const FormsAndInputs = () => { 
     const {register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
-        Axios({
-            method: "GET",
-            data: {
-              capG: capG,
-              bus: bus,
-              finC: finC,
-              liveE: lE,
+        Axios.get(`https://stonks-io.herokuapp.com/api/advice`,{
+            capG: capG,
+            bus: bus,
+            finC: finC,
+            liveE: lE,
 
-              NHHINC: rev,
-              HFIN_YN: finA,
-              HPRES_MORT: mortgage,
-              HDIV_YN: stonk,
-              NHUNDER18: kids,
-              HINT_YN: bank,
-              NRPP: loc
-            },
-            withCredentials: true,
-            url: "https://stonks-io.herokuapp.com/api/advice",
-          }).then((res) => {
-              console.log(res.json);
-          });
+            NHHINC: rev,
+            HFIN_YN: finA,
+            HPRES_MORT: mortgage,
+            HDIV_YN: stonk,
+            NHUNDER18: kids,
+            HINT_YN: bank,
+            NRPP: loc
+        }).then((res) => {
+            console.log(res);
+            console.log(res.data);
+        })
     }
 
 
@@ -58,10 +53,9 @@ const [finalA,setfinalA] = useState(0);
 const [stockf,setstockf] = useState(0); 
 const [fkids,setfkids] = useState(0); 
 const [costL,setcostL] = useState(0);
-
     return( 
         <div className="FormsAndInputs"> 
-         <form> 
+         <form onSubmit={handleSubmit(onSubmit)}> 
                 <h1 className="className">Possible Goals for Stonks.io?</h1>
                 <label for="capGrowth" className="capGrow"> 
                         <input  name="capGrowth" id="capGrowth" type="checkbox" ref={
@@ -139,7 +133,7 @@ const [costL,setcostL] = useState(0);
                     <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
                     </label> <br></br>
 
-             <button className="submitb" type="submit" onClick={e => onSubmit(e)} onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
+             <button className="submitb" type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
              onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
              >Submit</button>
 
