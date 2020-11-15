@@ -156,7 +156,7 @@ const [costL,setcostL] = useState(0);
     return( 
         <div className="FormsAndInputs"> 
          <form onSubmit={handleSubmit(onSubmit)}> 
-                <h1 className="className">Possible Goals</h1>
+                <h1 className="className">What are our financial goals?</h1>
                 <label for="capGrowth" className="capGrow"> 
                         <input  name="capGrowth" id="capGrowth" type="checkbox" ref={
                              register()
@@ -169,13 +169,13 @@ const [costL,setcostL] = useState(0);
                   
                   register()
                      } onInput = {()=>setbus(bus ==1 ? 0:1)} />
-                    <space></space> Starting a Business</label>
+                    <space></space> Finance a startup</label>
                     <div></div>
                     <label for="finCol" className="finny">
                     <input name="finCol" type="checkbox" id="finCol" ref={
                 register()
                  } onInput = {()=>setfinC(finC ==1 ? 0:1)}/>
-                <space></space> Financing College</label>
+                <space></space> Finance College</label>
              <div></div>
              <label for="livingExpense" className="livE">
                 <input name="livingExpense" type="checkbox" id="livingExpense" ref={
@@ -189,26 +189,26 @@ const [costL,setcostL] = useState(0);
           
       
                 <label className="inc"> 
-                    <span className= "textN">Income:</span> <space></space>          
+                    <span className= "textN">Estimated Annual Income:</span> <space></space>          
                     <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)} className="inc2"/>
                 </label> <br></br>
 
                 <label className="expe"> 
-                    <span className= "textN">Expenses:</span> <space></space>
+                    <span className= "textN">Estimed Annual Expenses:</span> <space></space>
                     <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)} className="expe2"/>
                 </label> <br></br>
 
                 <label className="fib"> 
-                    <span className= "textN">  State Fib Code:</span> <space></space>
+                    <span className= "textN">  State FIP Code:</span> <space></space>
                     <input type="text" name="location" ref={register} className="fib2" onChange={event=>setloc(event.target.value)} />
                 </label> <br></br>
 
                 <label className="child"> 
-                    <span className= "textN"> Children: </span><space></space>
+                    <span className= "textN"> Number of children under 18: </span><space></space>
                     <input type="number" name="children" ref={register} className="child2" onChange={event=>setkids(event.target.value)} />
                 </label> <br></br>
 
-                <label className="bannk">Do you have a Bank?</label>
+                <label className="bannk">Do you have a bank account of some kind?</label>
 
                 <label className="bannky"><space></space> Yes
                     <input name="Bank" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} /> 
@@ -219,7 +219,7 @@ const [costL,setcostL] = useState(0);
                 </label> <br></br>
                 
 
-                <label className="stonkk">Do you have a Mutual Funds or Stocks?</label>
+                <label className="stonkk">Do you have any Mutual Funds or Stocks?</label>
 
                 <label className="stonkky"><space></space> Yes 
                     <input name="mutualfund" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)} /> 
@@ -229,7 +229,7 @@ const [costL,setcostL] = useState(0);
                     <input name="mutualfund" type="radio" value="No" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)}/>
                 </label> <br></br>
 
-                <label className="finAS">Do you have Finacial Assistance?</label>
+                <label className="finAS">Do you receive government financial assistance?</label>
 
                 <label className="finASy"><space></space> Yes
                     <input name="finass" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)} /> 
@@ -239,7 +239,7 @@ const [costL,setcostL] = useState(0);
                     <input name="finass" type="radio" value="No" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)}/>
                 </label> <br></br>
 
-                <label className="mortgage">Do you have a mortgage?</label>
+                <label className="mortgage">Are you currently financing a mortgage?</label>
 
                 <label className="mortgagey"><space></space> Yes 
                     <input name="mortgage" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)} /> 
