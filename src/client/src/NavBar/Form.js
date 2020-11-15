@@ -136,7 +136,7 @@ const [costL,setcostL] = useState(0);
 
                  <label className="submitb">
              <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
-             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton"
+             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" /*onClick = {()=> url(resourse)}*/
              >Submit</button>
              </label>
 
