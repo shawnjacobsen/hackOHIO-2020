@@ -44,11 +44,11 @@ const FormsAndInputs = () => {
                 },
                 {
                     'title': 'Relocate',
-                    'value': res.relocate*(finC==1 ? 0.9:1.1)*(capG==1 ? 1.1:0.9)
+                    'value': res.relocate*(finC==1 ? 0.9:1.1)*(capG==1 ? 1.1:0.9)*(kids > 0 ? 0.5 : 1.2)
                 },
                 {
                     'title': 'Get Bank Account',
-                    'value': res.get_bank_account*(bus==1 ? 1.1:0.9)*(lE==1 ? 1.1:0.9)
+                    'value': res.get_bank_account*(bus==1 ? 1.1:0.9)*(lE==1 ? 1.1:0.9)*(bank == 0 ? 1.5 : 0.5)
                 },
                 {
                     'title': 'Diversify',
@@ -156,7 +156,7 @@ const [costL,setcostL] = useState(0);
     return( 
         <div className="FormsAndInputs"> 
          <form onSubmit={handleSubmit(onSubmit)}> 
-                <h1 className="className">Possible Goals for Stonks.io?</h1>
+                <h1 className="className">Possible Goals</h1>
                 <label for="capGrowth" className="capGrow"> 
                         <input  name="capGrowth" id="capGrowth" type="checkbox" ref={
                              register()
@@ -191,53 +191,68 @@ const [costL,setcostL] = useState(0);
                 <label className="inc"> 
                     <span className= "textN">Income:</span> <space></space>          
                     <input type="number" name="income" ref={register} onChange={event=>setrev(event.target.value)} className="inc2"/>
-                    </label> <br></br>
+                </label> <br></br>
+
                 <label className="expe"> 
-                <span className= "textN">Expenses:</span> <space></space>
+                    <span className= "textN">Expenses:</span> <space></space>
                     <input type="number" name="expense" ref={register} onChange={event=>setexp(event.target.value)} className="expe2"/>
                 </label> <br></br>
+
                 <label className="fib"> 
-                <span className= "textN">  State Fib Code:</span> <space></space>
+                    <span className= "textN">  State Fib Code:</span> <space></space>
                     <input type="text" name="location" ref={register} className="fib2" onChange={event=>setloc(event.target.value)} />
                 </label> <br></br>
+
                 <label className="child"> 
-                <span className= "textN"> Children: </span><space></space>
+                    <span className= "textN"> Children: </span><space></space>
                     <input type="number" name="children" ref={register} className="child2" onChange={event=>setkids(event.target.value)} />
                 </label> <br></br>
+
                 <label className="bannk">Do you have a Bank?</label>
+
                 <label className="bannky"><space></space> Yes
-                <input name="Bank" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} /> 
-                </label><label className="bannkn"><space></space> No
-                <input name="Bank" type="radio" value="No" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} />
+                    <input name="Bank" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} /> 
+                </label>
+
+                <label className="bannkn"><space></space> No
+                    <input name="Bank" type="radio" value="No" ref={register({required: true })} onInput = {()=>setbank(bank ==1 ? 0:1)} />
                 </label> <br></br>
                 
 
                 <label className="stonkk">Do you have a Mutual Funds or Stocks?</label>
-                    <label className="stonkky"><space></space> Yes 
+
+                <label className="stonkky"><space></space> Yes 
                     <input name="mutualfund" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)} /> 
-                    </label><label className="stonkkn"> No 
-                    <input name="mutualfund" type="radio" value="No" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)}/>
-                    </label> <br></br>
-
-                    <label className="finAS">Do you have Finacial Assistance?</label>
-                    <label className="finASy"><space></space> Yes
-                    <input name="finass" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)} /> 
-                    </label ><label className="finASn"><space></space> No
-                    <input name="finass" type="radio" value="No" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)}/>
-                    </label> <br></br>
-
-                    <label className="mortgage">Do you have a mortgage?</label>
-                    <label className="mortgagey"><space></space> Yes 
-                    <input name="mortgage" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)} /> 
-                    </label><label className="mortgagen"> No 
-                    <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
-                    </label> <br></br>
-
-             <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
-             onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
-             >Submit</button>
-
+                </label>
                 
+                <label className="stonkkn"> No 
+                    <input name="mutualfund" type="radio" value="No" ref={register({required: true })} onInput = {()=>setstonk(stonk ==1 ? 0:1)}/>
+                </label> <br></br>
+
+                <label className="finAS">Do you have Finacial Assistance?</label>
+
+                <label className="finASy"><space></space> Yes
+                    <input name="finass" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)} /> 
+                </label >
+                
+                <label className="finASn"><space></space> No
+                    <input name="finass" type="radio" value="No" ref={register({required: true })} onInput = {()=>setfinA(finA ==1 ? 0:1)}/>
+                </label> <br></br>
+
+                <label className="mortgage">Do you have a mortgage?</label>
+
+                <label className="mortgagey"><space></space> Yes 
+                    <input name="mortgage" type="radio" value="Yes" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)} /> 
+                </label>
+                
+                <label className="mortgagen"> No 
+                    <input name="mortgage" type="radio" value="No" ref={register({required: true })} onInput = {()=>setMortgage(mortgage ==1 ? 0:1)}/>
+                </label> <br></br>
+
+                <button type="submit" onClick ={()=>setfinalI(rev)} onClick ={()=>setfinalA(finA)} onClick ={()=>setstockf(stonk)}
+                onClick ={()=>setfkids(kids)} onClick ={()=>setcostL(loc)} className="submitbutton" 
+                >Submit</button>
+
             </form>
 
             <div className="results-section">
