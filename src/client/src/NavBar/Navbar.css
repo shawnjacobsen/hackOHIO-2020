@@ -11,9 +11,8 @@
 
 
 .navbar-logo{ 
-    color: #fff; 
-    justify-self: start; 
-    margin-left: 20px; 
+    color: #fff;  
+    justify-content: start;
     cursor: pointer; 
 } 
 

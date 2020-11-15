@@ -1,15 +1,16 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 import pickle
+import joblib
 import pandas as pd
+import numpy as np
 
 # Get headers for payload
-df_cols = ['HHINC', 'FINC_FIN', 'HPRES_MORT', 'HDIV_YN', 'FOWNU18', 'HINT_YN', 'RPP']
+df_cols = ['NHHINC', 'HFIN_YN', 'HPRES_MORT', 'HDIV_YN', 'NHUNDER18', 'HINT_YN', 'NRPP']
 return_cols = ['relocate', 'get_bank_account', 'get_credit_card', 'fin_diversification', 'fin_consolidation']
 
 # Importing model
-pickle_in = open("beep_boop_stonks.pkl","rb")
-model = pickle.load(pickle_in)
+model = joblib.load('beep_boop_stonks.joblib')
 
 # Flask app and Routes
 app = Flask(__name__)
@@ -22,24 +23,28 @@ def hello_world():
 @app.route("/api/advice", methods=['GET'])
 
 def predict():
-    pL_HHINC = request.json['HHINC']
-    pL_FINC_FIN = request.json['FINC_FIN']
-    pL_HPRES_MORT = request.json['HPRES_MORT']
-    pL_HDIV_YN = request.json['HDIV_YN']
-    pL_FOWNU18 = request.json['FOWNU18']
-    pL_HINT_YN = request.json['HINT_YN']
-    pL_RPP = request.json['RPP']
-    
-    input_vars = [df_cols, [pL_HHINC, pL_FINC_FIN, pL_HPRES_MORT, pL_HDIV_YN, pL_FOWNU18, pL_HINT_YN, pL_RPP]]
-    print(input_vars)
+    input_vars = [[request.json[df_cols[0]], request.json[df_cols[1]], request.json[df_cols[2]], request.json[df_cols[3]], request.json[df_cols[4]], request.json[df_cols[5]], request.json[df_cols[6]]]]
+
+    params_npArray = np.array(input_vars)
 
     # Get the model's prediction
-    prediction_proba = model.predict_proba(input_vars)
-    print("prediction_proba:")
-    print(prediction_proba)
-    prediction = (prediction_proba[0])[1]
+    prediction_0 = model.predict_proba(params_npArray)[0,0]
+    prediction_1 = model.predict_proba(params_npArray)[0,1]
+    prediction_2 = model.predict_proba(params_npArray)[0,2]
+    prediction_3 = model.predict_proba(params_npArray)[0,3]
+    prediction_4 = model.predict_proba(params_npArray)[0,4]
+
+    # prediction = (prediction_proba[0])[1]
     
-    ret = '{"prediction":' + str(float(prediction)) + '}'
+    ret = (
+        f'{{'
+        f'"{return_cols[0]}": "{str(prediction_0)}",'
+        f'"{return_cols[1]}": "{str(prediction_1)}",'
+        f'"{return_cols[2]}": "{str(prediction_2)}",'
+        f'"{return_cols[3]}": "{str(prediction_3)}",'
+        f'"{return_cols[4]}": "{str(prediction_4)}"'
+        f'}}'
+    )
     
     return ret
 

@@ -4,10 +4,10 @@ import Axios from 'axios';
 import "./App.css";
 import Navbar from "./NavBar/Navbar";
 import Login from "./Login";
-import Goals from "./Goals";
+
 import Dashboard from "./Dashboard";
 import MatchingCard from "./MatchingCard";
-import Resource from "./Resource";
+
 import FormsAndInputs from "./NavBar/Form";
 
 function App() {
@@ -53,15 +53,15 @@ function App() {
       <Router>
         <div className="App"> 
           <Navbar /> 
-          <FormsAndInputs/>
+          
           
           <Switch> 
             <Route path="/" exact><Redirect to="/dashboard" /></Route>
             <Route path="/matchMaking" component={MatchingCard}/> 
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={FormsAndInputs} />
             <Route path="/login" component={Login} />
-            <Route path="/resources" component={Resource} />
-            <Route path="/goals" component={Goals} />
+
+            
           </Switch>
         </div>
       </Router> 
