@@ -24,7 +24,7 @@ from skmultilearn.adapt import MLkNN
 from sklearn.model_selection import train_test_split
 
 # import data
-df = pd.read_csv("ML_fulldata_test_labels.csv")
+df = pd.read_csv("ML_fulldata_formatted.csv")
 df_array = df.values
 
 df_cols = ['NHHINC', 'HFIN_YN', 'HPRES_MORT', 'HDIV_YN', 'NHUNDER18', 'HINT_YN', 'NRPP', 'relocate', 'get_bank_account', 'get_credit_card', 'fin_diversification', 'fin_consolidation']
