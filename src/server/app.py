@@ -21,10 +21,10 @@ def FIPtoRPP(FIP):
         data.append(row) 
     npArray = np.array(data)
     rows, cols = np.where(npArray == FIP)
-    val = (data[rows[0]][1]) / N_RPP
+    val = (float(data[rows[0]][1])) / N_RPP
     return val
 
-print(FIPtoRPP(23))
+print(FIPtoRPP('23'))
 
 # Importing model
 model = joblib.load('beep_boop_stonks.joblib')
