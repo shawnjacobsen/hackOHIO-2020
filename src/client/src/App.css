@@ -49,7 +49,7 @@ p {
 }
 
 body {
-  background-image: url(background3.png);
+  background-image: url(background7.png);
   background-repeat: no-repeat;
 
 }
@@ -84,7 +84,7 @@ body {
 form{ 
   flex-direction: column;
 background: 
-linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+linear-gradient(rgba(255, 255, 255, 0.6), rgba(155, 89, 182, 0.6));
   display:flex;
   padding: 40px;
   max-width:1000px;
@@ -98,7 +98,7 @@ form > .className {
 
 }
 form > .capGrow { 
-  color:black;
+  color: black;
   margin-left: 375px;
 }
 form > .startbiz { 

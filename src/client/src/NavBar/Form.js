@@ -75,12 +75,12 @@ const FormsAndInputs = () => {
             data={response}
             indexBy="title"
             keys={["value"]}
-            colors={["#ddcb38", "#2b70e2"]}
+            colors={["#800391", "#2b70e2"]}
             theme={theme}
             dotSize={30}
             enableDotLabel={true}
             dotLabelYOffset={4}
-            gridShape="linear"
+            gridShape="linear" 
           />
         </div>
     )
