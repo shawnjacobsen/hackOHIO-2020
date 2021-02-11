@@ -1,6 +1,7 @@
 # hackOHIO-2020
 
 ## Stonks.io
+### 1st place for the Capital One Challenge
 
 A financial advisor web app built on a machine learning model from 2020 census data.
 
